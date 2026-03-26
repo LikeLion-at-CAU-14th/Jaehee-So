@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'OngleipRyuryu';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/Ownglyph_ryurue-Rg.woff2') format('woff2');
@@ -13,7 +14,6 @@ body{
     font-style: normal;
 }
 
-
 header{
     color: #556B2F;
     font-size: 25px;
@@ -26,7 +26,7 @@ header{
     display:flex;
     justify-content: space-between;
     align-items: stretch;
-    border-top: 3px solid #795548;
+    border-top: 5px solid #8d6e63;
     min-height: 80vh;
 }
 .left-box{
@@ -35,13 +35,14 @@ header{
     flex-direction: column;
     justify-content: space-evenly;
     text-align : center;
-    border-right: 3px solid #795548;
+    border-right: 5px solid #8d6e63;
+
 }
 .right-box{
     width: 75%;
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
+    margin-top:30px;
 }
 .image img{
     width: 220px;
@@ -64,8 +65,10 @@ header{
     text-align:left;
     color: #333333;
 }
+
 .aboutme{
     margin-left: 20px;
+   
 }
 .aboutme h2{
     color: #556B2F;
@@ -76,8 +79,7 @@ header{
 }
 .whatilike{
     margin-top:30px;
-    border-top: 3px solid #795548;
-    
+    border-top: 5px solid #8d6e63;
 }
 .whatilike h2{
     margin-left: 20px;
