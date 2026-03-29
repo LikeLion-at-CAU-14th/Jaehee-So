@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body{
+    background: #FFF;
+    min-height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 670px;
+    height: 960px;
+    border-radius: 20px;
+    border: 1px solid #FF7710;
+    background: #FFF;
+    box-shadow: 7px 7px 39px 0 rgba(255, 119, 16, 0.25);
+    margin:60px;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    gap:36px;
+    margin-top:85px;
+    margin-bottom: 91px;
+    justify-content: center;
+    align-items: center;
+
+}
+.header img{
+    width: 58px;
+    height: 29px;
+    fill: var(--LIKELION, #FF7710);
+}
+
+.title{
+    color: #FF7710;
+    font-family: Pretendard;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+}
+
+.info{
+    display:flex;
+    flex-direction: column;
+}
+
+
+.info-item{
+    display: flex;
+    padding-left:104px;
+    flex-direction: column;
+}
+
+.info-item p{
+    width: 158px;
+    height: 23.649px;
+    color: #797979;
+    font-family: "Noto Sans CJK KR";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin:0;
+}
+
+.input-line{
+    width: 466px;
+    height: 56.35px;
+    border:none;
+    border-bottom: 1px solid #CFCFCF;
+    outline: none;
+    margin-bottom: 0;
+}
+
+.input-line:hover{
+    border-bottom:1px solid #0068FF;
+}
+
+.gender{
+    display: flex;
+    margin-top:52px;
+    margin-bottom:0;
+    justify-content: center;
+    gap:30px;
+}
+
+.radio-group input{
+    appearance: none;           
+    width: 20px;
+    height: 19.954px;              
+    background-color: #EBEBEB;  
+    border: 1px solid #D2D2D2;  
+    border-radius: 50%;
+
+}
+
+.radio-group input:checked {
+    background-color: #FF7710; 
+    border-color: #FF7710;
+}
+
+.radio-group label{
+    color: #000;
+    font-family: "Noto Sans CJK KR";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.agree{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:50.06px;
+    gap:15px;
+}
+
+.agree input{
+    width: 20px;
+    height: 20px;
+}
+.agree label{
+    width: 419px;
+    height: 21px;
+    color: #000;
+    font-family: "Noto Sans CJK KR";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+}
+
+.line{
+    width: 470px;
+    height: 0.998px;
+    background: #E6E6E6;
+    margin-top: 30px;
+    margin-left: 100px;
+}
+
+.submit-bt input{
+    width: 470px;
+    height: 75px;
+    border-radius: 10px;
+    border: 1px solid #FF7710;
+    background: #FFF;
+    margin-top: 30px;
+    margin-left: 100px;
+    color: #FF7710;
+    text-align: center;
+    font-family: "Noto Sans CJK KR";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+  
