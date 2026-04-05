@@ -82,11 +82,11 @@ function judge(myChoice,comChoice){
         (myChoice === "scissors" && comChoice === "paper") ||
         (myChoice === "paper" && comChoice === "rock"))
         {
-            resultDisplay.innerText="Win";
+            resultDisplay.innerText="Win!";
             myScore++;
         }
     else{
-        resultDisplay.innerText="LOOSE";
+        resultDisplay.innerText="Lose!";
         comScore++;
     }
     myScoreDisplay.innerText=myScore;
