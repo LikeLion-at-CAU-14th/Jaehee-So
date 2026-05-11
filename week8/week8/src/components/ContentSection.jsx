@@ -8,7 +8,7 @@ const ContentSection = () => {
         <ArticleAboutMe>
         <h2>ABOUT ME</h2>
         <h4>안녕하세요! 멋쟁이 사자처럼 14기 프론트엔드 아기사자 소재희입니다!</h4>
-        <h4>만나서 반가워요😊</h4>
+        <h4>만나서 반갑습니다😊</h4>
       </ArticleAboutMe>
       <ArticleWhatILike>
         <h2>WHAT I LIKE</h2>
@@ -30,7 +30,7 @@ const SectionWrapper = styled.section`
   width: 75%;
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
+  margin-top: 5px;
 `
 const ArticleAboutMe = styled.article`
   margin-left: 20px;

@@ -22,16 +22,19 @@ const Container = styled.div`
   display: flex; 
   flex-direction: column;
   align-items: center; 
+  width: 100%;
   min-height: 100vh;
-  padding: 20px;
+  padding: 0; 
 `
 
 const Main = styled.div`
   display: flex;
-  background: rgba(255, 255, 255, 0.8); 
-  border-radius: 20px; 
-  padding: 40px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 1200px;
-`
+  width: 95%; 
+  max-width: 1400px; 
+  justify-content: space-between;
+  align-items: stretch;
+  border-top: 5px solid #8d6e63;
+  min-height: 80vh;
+  padding: 0;
+  margin-top: 10px; /* 헤더와의 간격 미세 조정 */
+`;

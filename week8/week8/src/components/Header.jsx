@@ -13,10 +13,11 @@ export default Header
 
 const StyledHeader = styled.header`
   color: #556b2f;
-  font-size: 25px; /* 기존 CSS의 font-size */
+  font-size: 25px; 
   font-weight: bold;
   padding-top: 15px;
   text-align: center;
   width: 100%;
-  margin-bottom: 20px; /* MainContainer와의 간격 */
+  margin-bottom: 20px;
+
 `;

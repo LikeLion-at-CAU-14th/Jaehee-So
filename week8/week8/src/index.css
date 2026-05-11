@@ -6,9 +6,12 @@
     font-display: swap;
 }
 
+
+
 body {
     background-image: url('/sketchbook.jpg');
     background-size: cover;
     font-family: 'OngleipRyuryu', sans-serif;
     margin: 0;
+    padding:0;
 }
