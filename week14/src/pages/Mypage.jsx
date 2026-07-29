@@ -24,6 +24,7 @@ const Mypage = () => {
       navigate("/",{replace:true});
     });
   },[]);
+  
 
 //TODO:마이페이지에 로그아웃 버튼 만들어 로그아웃 기능 구현하기
 const handleLogout=()=>{
