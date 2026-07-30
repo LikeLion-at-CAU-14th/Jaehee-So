@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 function App() {
   const name = import.meta.env.VITE_NAME;
-  const role = 'Frontend Developer';
-  const message = '프론트 짱짱';
-  const bgColor = '#fef3e2';
-  const avatar = '🦁';
-  const showBadge = true;
-  const socialUrl = '개인 깃허브 링크';
+  const role=import.meta.env.VITE_ROLE
+  const message = import.meta.env.VITE_MESSAGE
+  const bgColor = import.meta.env.VITE_BGCOLOR
+  const avatar = import.meta.env.VITE_AVATAR
+  const showBadge = import.meta.env.VITE_SHOWBADGE
+  const socialUrl = import.meta.env.VITE_socialUrl
 
   return (
     <Wrapper>
