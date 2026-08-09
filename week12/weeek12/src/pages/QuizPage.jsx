@@ -24,7 +24,7 @@ const QuizPage = () => {
   }, []);
 
   if (questions.length === 0) {
-    return <Loading>로딩 중</Loading>;
+  return <Loading>로딩 중</Loading>;
   }
 
   const currentQuiz = questions[currentIdx];
