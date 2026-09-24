@@ -68,5 +68,22 @@ export async function addPost({title,content}:AddPostInput):Promise<Post> {
 }
 
 // [과제 1-1] 게시글 상세 조회 함수 작성하기
+export async function getPostById(id:number):Promise<Post> {
+    await delay(300);
+    const post = posts.find((post)=>post.id===id);
+
+    if(!post){
+        throw new Error('게시글을 찾을 수 없습니다.');
+    }
+
+    return post;
+}
 
 // [과제 1-2] 게시글 삭제 함수 작성하기
+export async function deletePost(id:number):Promise<number> {
+    await delay(300);
+    posts = posts.filter((post)=>post.id!==id);
+    savePosts(posts);
+
+    return id;
+}
