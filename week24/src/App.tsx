@@ -4,7 +4,7 @@ import Header from './components/Header';
 import PostForm from './components/PostForm';
 import PostList from './components/PostList';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { addPost, getPosts } from './api/posts';
+import { addPost, getPostById, getPosts } from './api/posts';
 
 export default function App() {
 	// 선택된 게시글 id 상태 만들기
@@ -28,6 +28,12 @@ export default function App() {
 
   });
   // [과제2] useQuery로 선택된 게시글 상세 조회하기(staleTime 추가해보기)
+  const postDetailQuery=useQuery({
+    queryKey:['posts',selectedPostId],
+    queryFn:()=>getPostById(selectedPostId as number),
+    enabled:selectedPostId!==null,
+    staleTime:1000*60,
+  });
 
   // [과제3] useMutation으로 게시글 삭제 기능 만들기
 
