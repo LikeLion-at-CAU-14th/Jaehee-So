@@ -163,14 +163,13 @@ header a {
 
   padding: 20px 40px;
 
-  background: white;
-  color: #222;
-  border-bottom: 1px solid #ddd;
+  background: #111;
+  border-bottom: 1px solid #2a2a2a;
 }
 
 .header nav {
   display: flex;
-  gap: 20px;
+  gap: 24px;
 }
 
 .header h1 {
@@ -180,4 +179,10 @@ header a {
 
 .header nav a {
   font-weight: 600;
+  color: #aaa;
+  transition: color 0.2s;
+}
+
+.header nav a:hover {
+  color: #f5c518;
 }
