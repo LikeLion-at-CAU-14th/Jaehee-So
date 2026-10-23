@@ -147,6 +147,7 @@ header a {
   border: 1px solid #ddd;
   border-radius: 12px;
   background: white;
+  color: #222;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
