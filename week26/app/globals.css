@@ -164,7 +164,13 @@ header a {
   padding: 20px 40px;
 
   background: white;
+  color: #222;
   border-bottom: 1px solid #ddd;
+}
+
+.header nav {
+  display: flex;
+  gap: 20px;
 }
 
 .header h1 {
