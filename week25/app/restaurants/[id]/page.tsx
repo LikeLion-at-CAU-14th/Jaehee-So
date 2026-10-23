@@ -1,7 +1,9 @@
+import BackButton from "@/app/BackButton";
 import LikeButton from "@/app/LikeButton";
 import { restaurants } from "@/data/restaurants";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+
 
 export default async function RestautantsDetailPage({
     params,
@@ -22,10 +24,8 @@ export default async function RestautantsDetailPage({
         추천 메뉴: {restaurant.menu} ({restaurant.price.toLocaleString()}원)
       </p>
       <p className="rounded-xl bg-orange-50 p-4">“{restaurant.comment}”</p>
-      <LikeButton/>
-      <Link href="/restaurants" className="text-orange-500 underline">
-        목록으로 돌아가기
-      </Link>
+      <BackButton/>
+      
     </div>
     )
 }
