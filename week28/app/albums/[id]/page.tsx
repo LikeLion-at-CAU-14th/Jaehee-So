@@ -1,9 +1,29 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getAlbum } from "@/data/albums";
+import { Metadata } from "next";
 
 // 과제: generateMetadata로 앨범마다 title, description 다르게 넣기
-
+export async function generateMetadata({
+  params,
+} : {
+  params:Promise<{id:string}>;
+  
+}) :  Promise<Metadata> {
+  const { id } = await params;
+  const album = getAlbum(id);
+  if (!album) return {};
+  return {
+    title: album.title,            
+    description: album.description,
+    openGraph: {
+      title: album.title,
+      description: album.description,
+      images: [album.cover],      
+    },
+  };
+}
 // 과제: generateMetadata에 openGraph 추가해서 앨범 표지가 링크 미리보기에 뜨게 하기
 
 // 도전 과제: generateStaticParams로 상세 페이지를 빌드할 때 미리 만들어두기
@@ -27,7 +47,15 @@ export default async function AlbumPage({
       </Link>
 
       <div className="detail">
-        <img src={album.cover} className="detail-cover" />
+        <Image
+          src={album.cover}
+          alt={`${album.artist} - ${album.title} 앨범 표지`}
+          width={420}
+          height={420}
+          sizes="(max-width: 460px) 100vw, 420px"
+          preload
+          className="detail-cover"
+        />
 
         <div className="detail-info">
           <div className="detail-genre">
