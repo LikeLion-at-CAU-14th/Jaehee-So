@@ -1,0 +1,82 @@
+import Link from "next/link";
+import Image from "next/image";
+import { notFound } from "next/navigation";
+import { albums, getAlbum } from "@/data/albums";
+import { Metadata } from "next";
+
+// 과제: generateMetadata로 앨범마다 title, description 다르게 넣기
+export async function generateMetadata({
+  params,
+} : {
+  params:Promise<{id:string}>;
+  
+}) :  Promise<Metadata> {
+  const { id } = await params;
+  const album = getAlbum(id);
+  if (!album) return {};
+  return {
+    title: album.title,            
+    description: album.description,
+    openGraph: {
+      title: album.title,
+      description: album.description,
+      images: [album.cover],      
+    },
+  };
+}
+// 과제: generateMetadata에 openGraph 추가해서 앨범 표지가 링크 미리보기에 뜨게 하기
+
+// 도전 과제: generateStaticParams로 상세 페이지를 빌드할 때 미리 만들어두기
+export function generateStaticParams() {
+  return albums.map((album) => ({ id: album.id }));
+}
+
+export default async function AlbumPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const album = getAlbum(id);
+
+  if (!album) {
+    notFound();
+  }
+
+  return (
+    <main className="container">
+      <Link href="/" className="back-link">
+        ← 목록으로
+      </Link>
+
+      <div className="detail">
+        <Image
+          src={album.cover}
+          alt={`${album.artist} - ${album.title} 앨범 표지`}
+          width={420}
+          height={420}
+          sizes="(max-width: 460px) 100vw, 420px"
+          preload
+          className="detail-cover"
+        />
+
+        <div className="detail-info">
+          <div className="detail-genre">
+            {album.genre} · {album.year}
+          </div>
+          {/* 과제: 앨범 제목을 div 대신 알맞은 시맨틱 태그로 바꾸기 */}
+          <h1 className="detail-title">{album.title}</h1>
+          <div className="detail-artist">{album.artist}</div>
+          <p className="detail-desc">{album.description}</p>
+
+          <h2 className="track-heading">수록곡</h2>
+          <ol className="track-list">
+            {album.tracks.map((track) => (
+              <li key={track}>{track}</li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </main>
+  );
+}
