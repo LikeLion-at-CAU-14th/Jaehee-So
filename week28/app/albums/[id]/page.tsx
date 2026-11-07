@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getAlbum } from "@/data/albums";
+import { albums, getAlbum } from "@/data/albums";
 import { Metadata } from "next";
 
 // 과제: generateMetadata로 앨범마다 title, description 다르게 넣기
@@ -27,6 +27,9 @@ export async function generateMetadata({
 // 과제: generateMetadata에 openGraph 추가해서 앨범 표지가 링크 미리보기에 뜨게 하기
 
 // 도전 과제: generateStaticParams로 상세 페이지를 빌드할 때 미리 만들어두기
+export function generateStaticParams() {
+  return albums.map((album) => ({ id: album.id }));
+}
 
 export default async function AlbumPage({
   params,
@@ -62,11 +65,11 @@ export default async function AlbumPage({
             {album.genre} · {album.year}
           </div>
           {/* 과제: 앨범 제목을 div 대신 알맞은 시맨틱 태그로 바꾸기 */}
-          <div className="detail-title">{album.title}</div>
+          <h1 className="detail-title">{album.title}</h1>
           <div className="detail-artist">{album.artist}</div>
           <p className="detail-desc">{album.description}</p>
 
-          <div className="track-heading">수록곡</div>
+          <h2 className="track-heading">수록곡</h2>
           <ol className="track-list">
             {album.tracks.map((track) => (
               <li key={track}>{track}</li>
